@@ -41,4 +41,19 @@ void placeFood() {
         }
     }
 }
+void initializeGame() {
+    snake.clear();
 
+    Point head = {HEIGHT / 2, WIDTH / 2};
+
+    snake.push_back(head);
+    snake.push_back({head.y, head.x - 1});
+    snake.push_back({head.y, head.x - 2});
+
+    score = 0;
+    direction = KEY_RIGHT;
+    gameOver = false;
+    paused = false;
+
+    placeFood();
+}
